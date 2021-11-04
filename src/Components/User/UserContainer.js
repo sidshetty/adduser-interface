@@ -1,6 +1,17 @@
-import User from './User';
+import Card from '../UI/Card';
+import styles from './UserContainer.module.css';
 const UserContainer = (props) => {
-	return <ul>{props.users.map((users) => <User key={users.id} age={users.age} name={users.name} />)}</ul>;
+	return (
+		<Card className={styles.users}>
+			<ul>
+				{props.users.map((users) => (
+					<li key={users.id}>
+						{users.name} ({users.age} years old)
+					</li>
+				))}
+			</ul>
+		</Card>
+	);
 };
 
 export default UserContainer;

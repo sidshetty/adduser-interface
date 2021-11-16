@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import styles from './AddUserForm.module.css';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModal';
-
+import Wrapper from '../Helpers/Wrapper';
 const AddUserForm = (props) => {
 	const [ name, setName ] = useState('');
 	const [ age, setAge ] = useState('');
@@ -51,7 +51,7 @@ const AddUserForm = (props) => {
 	};
 
 	return (
-		<div>
+		<Wrapper>
 			{error && <ErrorModal onClose={resetError} title={error.title} message={error.message} />}
 
 			<Card className={styles.input}>
@@ -65,7 +65,7 @@ const AddUserForm = (props) => {
 					</Button>
 				</form>
 			</Card>
-		</div>
+		</Wrapper>
 	);
 };
 

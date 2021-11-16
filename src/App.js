@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import UserContainer from './Components/User/UserContainer';
 import AddUserForm from './Components/User/AddUserForm';
 
@@ -14,10 +14,11 @@ function App() {
 	};
 
 	return (
-		<div>
+		<Fragment>
+			{/* can use React.Fragment instead without importing fragment from react */}
 			<AddUserForm addNewUser={onAddUser} />
 			<UserContainer users={users} />
-		</div>
+		</Fragment>
 	);
 }
 
